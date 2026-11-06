@@ -1,0 +1,7 @@
+{
+  "name": "ExpressBank ATM POV Simulator",
+  "description": "First-person POV ATM simulator featuring an interactive walking cutscene, personalized card generator with unique card number and PIN, interactive wallet, and the full ExpressBank ATM banking software.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
