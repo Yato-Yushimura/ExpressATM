@@ -89,7 +89,14 @@ export default function App() {
     setSimulatorState('pov_standing');
   };
 
+  const [walkSessionKey, setWalkSessionKey] = useState(0);
+
   const handleStartNewWalk = () => {
+    setSessionCards([initialDefaultCard]);
+    setActiveCard(initialDefaultCard);
+    setWalletCash(3600);
+    setDispensedCash(null);
+    setWalkSessionKey((prev) => prev + 1);
     setSimulatorState('walking');
   };
 
@@ -129,9 +136,9 @@ export default function App() {
       {/* SCENE 1: WALKING CUTSCENE */}
       {simulatorState === 'walking' && (
         <WalkingCutscene
+          key={walkSessionKey}
           onArriveAtAtm={handleArriveAtAtm}
           onRegisterAccount={handleRegisterAccount}
-          initialProfile={activeCard?.isCustomUser ? activeCard : undefined}
         />
       )}
 
@@ -142,6 +149,7 @@ export default function App() {
           onInteractUseCard={handleInteractUseCard}
           onOpenWallet={handleOpenWallet}
           onLeaveAtm={handleLeaveAtm}
+          onStartNewWalk={handleStartNewWalk}
           dispensedCash={dispensedCash}
           onTakeDispensedCash={handleTakeDispensedCash}
         />
@@ -156,6 +164,7 @@ export default function App() {
             onInteractUseCard={handleInteractUseCard}
             onOpenWallet={handleOpenWallet}
             onLeaveAtm={handleLeaveAtm}
+            onStartNewWalk={handleStartNewWalk}
             dispensedCash={dispensedCash}
             onTakeDispensedCash={handleTakeDispensedCash}
           />

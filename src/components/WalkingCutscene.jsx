@@ -368,14 +368,31 @@ export const WalkingCutscene = ({
                 </div>
               </div>
 
-              <button
-                type="button"
-                onClick={handleProceedToKiosk}
-                className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm tracking-wide shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-2 transition-all transform active:scale-[0.99]"
-              >
-                <span>Approach ATM Kiosk</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
+              <div className="space-y-2.5">
+                <button
+                  type="button"
+                  onClick={handleProceedToKiosk}
+                  className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm tracking-wide shadow-lg shadow-emerald-600/30 flex items-center justify-center gap-2 transition-all transform active:scale-[0.99]"
+                >
+                  <span>Approach ATM Kiosk</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setGeneratedCard(null);
+                    setUserName('');
+                    setCustomPin('');
+                    setDistance(45);
+                    setIsWalking(true);
+                  }}
+                  className="w-full py-2.5 px-4 rounded-xl bg-slate-800/90 hover:bg-slate-700 border border-slate-700 text-slate-300 hover:text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
+                >
+                  <User className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>Create Another New User Instead</span>
+                </button>
+              </div>
             </div>
           )}
         </div>

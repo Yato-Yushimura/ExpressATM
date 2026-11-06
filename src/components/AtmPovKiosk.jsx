@@ -10,6 +10,7 @@ import {
   Sparkles,
   ArrowRight,
   Info,
+  UserPlus,
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { formatPHP } from '../utils/atmLogic.js';
@@ -27,6 +28,7 @@ export const AtmPovKiosk = ({
   onInteractUseCard,
   onOpenWallet,
   onLeaveAtm,
+  onStartNewWalk,
   dispensedCash,
   onTakeDispensedCash,
 }) => {
@@ -445,6 +447,18 @@ export const AtmPovKiosk = ({
         </div>
 
         <div className="flex items-center gap-2 md:gap-3">
+          {onStartNewWalk && (
+            <button
+              type="button"
+              onClick={onStartNewWalk}
+              className="px-3 py-1.5 rounded-lg bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 text-xs font-mono text-cyan-300 hover:text-white flex items-center gap-1.5 transition-colors cursor-pointer"
+              title="Start a new walk and register a new user"
+            >
+              <UserPlus className="w-3.5 h-3.5" />
+              <span>New User</span>
+            </button>
+          )}
+
           <button
             type="button"
             onClick={() => setShowPinPeek(!showPinPeek)}

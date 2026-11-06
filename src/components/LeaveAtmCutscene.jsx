@@ -97,8 +97,11 @@ export const LeaveAtmCutscene = ({
 
               <button
                 type="button"
-                onClick={onStartNewWalk}
-                className="py-3 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-200 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors"
+                onClick={() => {
+                  playFootstep();
+                  onStartNewWalk();
+                }}
+                className="py-3 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-600 text-slate-200 text-xs font-bold flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
               >
                 <User className="w-4 h-4 text-cyan-400" />
                 <span>New Walk / New User</span>
