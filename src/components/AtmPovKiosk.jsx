@@ -263,7 +263,13 @@ export const AtmPovKiosk = ({
       <div className="relative z-10 flex-1 flex items-center justify-center overflow-hidden">
         <div className="relative w-full h-full max-w-5xl flex items-center justify-center animate-[pulse_8s_ease-in-out_infinite]">
           <img
-            src="/assets/aistudio/image_ccbca15a.png"
+            src={`${import.meta.env?.BASE_URL || './'}assets/aistudio/image_ccbca15a.png`}
+            onError={(e) => {
+              if (!e.currentTarget.dataset.fallback) {
+                e.currentTarget.dataset.fallback = 'true';
+                e.currentTarget.src = './public/assets/aistudio/image_ccbca15a.png';
+              }
+            }}
             alt="ExpressBank ATM Front View POV"
             className="w-full h-full object-contain max-h-[92vh] drop-shadow-[0_25px_50px_rgba(0,0,0,0.9)] select-none pointer-events-none"
           />

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build",
+    "build": "vite build && rm -rf dist-ghpages && cp -r dist dist-ghpages",
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
     "lint": "node --check src/utils/atmLogic.js src/utils/soundEffects.js && python3 -m py_compile atm_oop.py && node --test src/utils/atmLogic.test.js"
