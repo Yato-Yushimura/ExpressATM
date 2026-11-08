@@ -8,6 +8,7 @@ import { AtmPovKiosk } from './components/AtmPovKiosk.jsx';
 import { WalletView } from './components/WalletView.jsx';
 import { AtmZoomedView } from './components/AtmZoomedView.jsx';
 import { LeaveAtmCutscene } from './components/LeaveAtmCutscene.jsx';
+import { PWAInstallPrompt } from './components/PWAInstallPrompt.jsx';
 
 export default function App() {
   // Initialize ATM service (OOP instance)
@@ -203,6 +204,9 @@ export default function App() {
           onOpenWallet={handleOpenWallet}
         />
       )}
+
+      {/* PWA Install Prompt & Offline Indicator */}
+      <PWAInstallPrompt />
     </div>
   );
 }

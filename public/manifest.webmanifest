@@ -1,0 +1,50 @@
+{
+  "id": "./",
+  "name": "ExpressBank ATM POV Simulator",
+  "short_name": "ExpressATM",
+  "description": "First-person POV ATM simulator featuring an interactive walking cutscene, personalized card generator with unique card number and PIN, interactive wallet, and the full ExpressBank ATM banking software.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "categories": ["finance", "simulation", "education"],
+  "icons": [
+    {
+      "src": "./pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "./pwa-screenshot-wide.png",
+      "sizes": "640x360",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "ExpressBank ATM POV Simulator Desktop Experience"
+    },
+    {
+      "src": "./pwa-screenshot-narrow.png",
+      "sizes": "360x640",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "ExpressBank ATM POV Simulator Mobile View"
+    }
+  ]
+}

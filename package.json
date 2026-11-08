@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port=3000 --host=0.0.0.0",
-    "build": "vite build && rm -rf dist-ghpages && cp -r dist dist-ghpages",
+    "build": "python3 generate_pwa_icons.py && vite build && rm -rf dist-ghpages && cp -r dist dist-ghpages && cp public/manifest.json public/manifest.webmanifest public/sw.js public/icon.svg public/favicon.ico public/apple-touch-icon.png public/pwa-192x192.png public/pwa-512x512.png public/pwa-maskable-512x512.png public/pwa-screenshot-wide.png public/pwa-screenshot-narrow.png .",
     "preview": "vite preview",
     "clean": "rm -rf dist server.js",
-    "lint": "node --check src/utils/atmLogic.js src/utils/soundEffects.js && python3 -m py_compile atm_oop.py && node --test src/utils/atmLogic.test.js"
+    "lint": "node --check src/utils/atmLogic.js src/utils/soundEffects.js src/utils/usePWAInstall.js && python3 -m py_compile atm_oop.py generate_pwa_icons.py desktop_app.py && node --test src/utils/atmLogic.test.js"
   },
   "dependencies": {
     "@google/genai": "^2.4.0",
